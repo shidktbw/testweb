@@ -1,23 +1,97 @@
 body{
-  margin: 0;
-  padding: 0;
-  background: url(add.jpg) no-repeat;
-  background-size: cover;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  min-height: 100vh;
+  
+  font-family: sans-serif;
+  background-color: #1e1f21;
 }
+
+
+#github{
+
+
+  color: #fff;
+
+
+  animation: animate 3s linear infinite;
+  text-shadow: 0 0 20px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+    0 0 200px #0072ff;
+}
+
+#github {
+  animation-delay: 1s;
+}
+
+
+
 .box{
   width: 450px;
   background: rgba(0, 0, 0, 0.4);
-  padding: 40px;
+  padding: 60px;
   text-align: center;
   margin: auto;
   margin-top: 5%;
   color: white;
   font-family: 'Century Gothic',sans-serif;
+
 }
+.box{
+  height: 610px;
+  width: 650px;
+  position: relative;
+  display:inline-block;
+  padding: 40px;
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  border-radius: .125em;
+  background-color: inherit;
+}
+
+.box::after{
+  content:'';
+  position: absolute;
+  z-index: -1;
+  top: -.125em;
+  left: -.125em;
+  width: calc(100% + .25em);
+  height: calc(100% + .25em);
+  border-radius: .25em;
+  background-image: linear-gradient(45deg,#f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  background-size: 100%;
+  animation: animateborder 3s ease infinite paused;
+}
+
+.btn:hover::after{
+  animation-play-state: running;
+}
+
+@keyframes animateborder {
+    0% {
+        background-position: 0%;
+    }
+    50% {
+        background-position: 100%;
+    }
+    100% {
+        background-position: 0%;
+    }
+}
+
+
+
+
+
+
+
 .box-img{
+
   border-radius: 50%;
   width: 200px;
   height: 200px;
+
 }
 .box h1{
   font-size: 40px;
@@ -41,6 +115,7 @@ ul{
   margin: 6px;
   list-style: none;
 }
+
 .box li a{
   color: white;
   text-decoration: none;
@@ -48,5 +123,14 @@ ul{
   transition: all ease-in-out 250ms;
 }
 .box li a:hover{
-  color: #b9b9b9;
+  color: #737373;
+}
+
+@keyframes animate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
 }
